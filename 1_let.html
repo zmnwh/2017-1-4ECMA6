@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+		div {
+			width:100px;
+			height:100px;
+			border:1px solid #000;
+			display: none;
+		}
+		.active {
+			background:red;
+		}
+		.show {
+			display: block;
+		}
+	</style>
+	</head>
+	<body>
+		<input type="button" value="按钮1" class="active"/>
+		<input type="button" value="按钮2"/>
+		<input type="button" value="按钮3"/>
+		<div class="show">我是第1页的内容</div>
+		<div>我是第2页的内容</div>
+		<div>我是第3页的内容</div>
+		<script>
+			/*var inputs=document.getElementsByTagName("input");
+			var divs=document.getElementsByTagName("div");
+			console.log(inputs);
+			for(var i=0;i<inputs.length;i++){
+				inputs[i].index=i;
+				inputs[i].onclick=function(){
+					for(var i=0;i<inputs.length;i++){
+						inputs[i].className="";
+						divs[i].className="";
+						this.className="active";
+						divs[this.index].className="show";
+					}
+				}
+			}*/
+			let inputs=document.getElementsByTagName("input");
+			let divs=document.getElementsByTagName("div");
+			for(let i=0;i<inputs.length;i++){
+				inputs[i].onclick=function(){
+					for(var j=0;j<inputs.length;j++){
+						inputs[j].className="";
+						divs[j].className="";
+						inputs[i].className="active";
+						divs[i].className="show";
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
